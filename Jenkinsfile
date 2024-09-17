@@ -1,23 +1,26 @@
-
 pipeline {
     agent any
+
+    tools {
+        maven 'Maven'
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://your-repo-url.git'
+                git 'https://github.com/onniluova/jenkinstask.git'
             }
         }
 
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat "mvn clean install"
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat "mvn test"
             }
         }
 
@@ -35,4 +38,3 @@ pipeline {
         }
     }
 }
-
