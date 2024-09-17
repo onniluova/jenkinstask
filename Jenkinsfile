@@ -1,11 +1,10 @@
-
 pipeline {
     agent any
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://your-repo-url.git'
+                git 'https://github.com/onniluova/jenkinstask.git'
             }
         }
 
