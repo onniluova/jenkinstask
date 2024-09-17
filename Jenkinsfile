@@ -5,13 +5,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/onniluova/jenkinstask.git'
+                git 'https://your-repo-url.git'
             }
         }
 
         stage('Build') {
             steps {
-                tool 'Maven'
                 bat 'mvn clean install'
             }
         }
